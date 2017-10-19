@@ -8,15 +8,38 @@ public class PhysicsEngine : MonoBehaviour {
     /// average velocity this fixedupdate()
     /// </summary>
     public Vector3 m_v;
+    public Vector3 m_netForceVector;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    public List<Vector3> m_forceVectorList = new List<Vector3>();
+
+    // Use this for initialization
+    void Start ()
+    { 
+    }
 
     private void FixedUpdate()
     {
-        Vector3 deltaS = m_v * Time.deltaTime;
-        this.transform.position += deltaS;
+        AddForces();
+
+        if(m_netForceVector == Vector3.zero)
+        {
+            Vector3 deltaS = m_v * Time.deltaTime;
+            this.transform.position += deltaS;
+        }
+        else
+        {
+            Debug.LogError("Unbalanced for detected, help !");
+        }
+        
+    }
+
+    private void AddForces()
+    {
+        m_netForceVector = Vector3.zero;
+
+        for(int i = 0; i < m_forceVectorList.Count; ++i)
+        {
+            m_netForceVector += m_forceVectorList[i];
+        }
     }
 }

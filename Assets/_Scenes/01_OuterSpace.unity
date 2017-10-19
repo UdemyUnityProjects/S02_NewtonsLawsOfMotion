@@ -189,6 +189,7 @@ GameObject:
   - component: {fileID: 1322412195}
   - component: {fileID: 1322412194}
   - component: {fileID: 1322412198}
+  - component: {fileID: 1322412199}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -266,6 +267,23 @@ Skybox:
   m_GameObject: {fileID: 1322412193}
   m_Enabled: 1
   m_CustomSkybox: {fileID: 2100000, guid: 36ebb1f81aa054bd49704f3d17f62c4d, type: 2}
+--- !u!114 &1322412199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1322412193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27acebc9ad1110f6d00074c88d76c639, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1764859367}
+  distance: 10
+  xSpeed: 250
+  ySpeed: 120
+  yMinLimit: -20
+  yMaxLimit: 80
 --- !u!1 &1764859363
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,6 +295,8 @@ GameObject:
   - component: {fileID: 1764859366}
   - component: {fileID: 1764859365}
   - component: {fileID: 1764859364}
+  - component: {fileID: 1764859368}
+  - component: {fileID: 1764859369}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -350,3 +370,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1764859368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1764859363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3184c0a8dc6798c4997c76aea85d1469, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_v: {x: 0, y: 0, z: 0}
+  m_netForceVector: {x: 0, y: 0, z: 0}
+  m_forceVectorList:
+  - {x: 1, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+--- !u!114 &1764859369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1764859363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6db481a40583471792bc96a4c9bc12b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showTrails: 1
