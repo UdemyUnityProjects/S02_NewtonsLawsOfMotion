@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 23344625883258888}
   - component: {fileID: 114123801218935792}
   - component: {fileID: 114154703100709022}
+  - component: {fileID: 114165827883499422}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -98,7 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_velovityVector: {x: 0, y: 0, z: 0}
   m_netForceVector: {x: 0, y: 0, z: 0}
-  m_mass: 10
+  m_mass: 100
   showTrails: 1
 --- !u!114 &114154703100709022
 MonoBehaviour:
@@ -112,7 +113,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_velocityExponent: 1.8
-  m_dragConstant: 1
+  m_dragConstant: 4
+--- !u!114 &114165827883499422
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1766218874841476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b583ccd211331a4d8d7893caae692cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &135443576982138614
 SphereCollider:
   m_ObjectHideFlags: 1
