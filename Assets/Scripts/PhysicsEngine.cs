@@ -7,7 +7,7 @@ public class PhysicsEngine : MonoBehaviour {
     /// <summary>
     /// average velocity this fixedupdate()
     /// </summary>
-    public Vector3 m_v;
+    public Vector3 m_velovityVector;
     public Vector3 m_netForceVector;
 
     public float m_mass = 1.0f;
@@ -26,7 +26,7 @@ public class PhysicsEngine : MonoBehaviour {
         UpdateVelocity();
 
         //update position
-        this.transform.position += m_v * Time.deltaTime;
+        this.transform.position += m_velovityVector * Time.deltaTime;
     }
 
     private void AddForces()
@@ -42,6 +42,6 @@ public class PhysicsEngine : MonoBehaviour {
     private void UpdateVelocity()
     {
         Vector3 accelerationVector = m_netForceVector / m_mass;
-        m_v += accelerationVector * Time.deltaTime;
+        m_velovityVector += accelerationVector * Time.deltaTime;
     }
 }
