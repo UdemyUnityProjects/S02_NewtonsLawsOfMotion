@@ -296,6 +296,7 @@ GameObject:
   - component: {fileID: 1764859365}
   - component: {fileID: 1764859364}
   - component: {fileID: 1764859368}
+  - component: {fileID: 1764859370}
   - component: {fileID: 1764859369}
   m_Layer: 0
   m_Name: Ball
@@ -381,11 +382,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3184c0a8dc6798c4997c76aea85d1469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_v: {x: 0, y: 0, z: 0}
+  m_velovityVector: {x: 0, y: 0, z: 0}
   m_netForceVector: {x: 0, y: 0, z: 0}
-  m_forceVectorList:
-  - {x: 1, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
+  m_mass: 100
+  showTrails: 1
 --- !u!114 &1764859369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -394,7 +394,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1764859363}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6db481a40583471792bc96a4c9bc12b, type: 3}
+  m_Script: {fileID: 11500000, guid: b243725cdec4a3340bc2e3c0948709eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showTrails: 1
+  m_forceVector: {x: 4, y: 5, z: 6}
+--- !u!114 &1764859370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1764859363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b243725cdec4a3340bc2e3c0948709eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_forceVector: {x: 1, y: 2, z: 3}
