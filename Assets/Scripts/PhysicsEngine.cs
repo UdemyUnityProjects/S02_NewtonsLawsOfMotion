@@ -48,6 +48,7 @@ public class PhysicsEngine : MonoBehaviour {
     public void AddForce(Vector3 forceToAdd)
     {
         m_forceVectorList.Add(forceToAdd);
+        Debug.Log("Adding force " + forceToAdd + " tot " + gameObject.name);
     }
 
     public List<Vector3> GetForceVectorList()
@@ -66,7 +67,13 @@ public class PhysicsEngine : MonoBehaviour {
                     continue;
 
                 PhysicsEngine physicsEngineA = this.m_physicsEngineArray[i];
+
+                if (physicsEngineA == this)
+                    continue;
+
                 PhysicsEngine physicsEngineB = this.m_physicsEngineArray[j];
+
+                
 
                 Debug.Log("Calculating gravitational force exerted on " + physicsEngineA.name +
                         " due to the gravity of " + physicsEngineB.name);
