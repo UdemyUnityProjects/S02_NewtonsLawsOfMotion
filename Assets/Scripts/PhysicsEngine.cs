@@ -7,10 +7,10 @@ public class PhysicsEngine : MonoBehaviour {
     /// <summary>
     /// average velocity this fixedupdate()
     /// </summary>
-    public Vector3 m_velovityVector;
-    public Vector3 m_netForceVector;
+    public Vector3 m_velovityVector;                //[m s^-1]
+    public Vector3 m_netForceVector;                //N [kg m s^-2]
 
-    public float m_mass = 1.0f;
+    public float m_mass = 1.0f;                     //[kg]
 
 
     private List<Vector3> m_forceVectorList = new List<Vector3>();
