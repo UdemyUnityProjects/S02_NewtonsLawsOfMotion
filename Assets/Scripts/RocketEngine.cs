@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// https://en.wikipedia.org/wiki/Rocket_engine
+/// </summary>
 [RequireComponent(typeof(PhysicsEngine))]
 public class RocketEngine : MonoBehaviour {
 
