@@ -10,6 +10,9 @@ public class PhysicsEngine : MonoBehaviour {
     public Vector3 m_v;
     public Vector3 m_netForceVector;
 
+    public float m_mass = 1.0f;
+
+
     public List<Vector3> m_forceVectorList = new List<Vector3>();
 
     // Use this for initialization
@@ -20,17 +23,10 @@ public class PhysicsEngine : MonoBehaviour {
     private void FixedUpdate()
     {
         AddForces();
+        UpdateVelocity();
 
-        if(m_netForceVector == Vector3.zero)
-        {
-            Vector3 deltaS = m_v * Time.deltaTime;
-            this.transform.position += deltaS;
-        }
-        else
-        {
-            Debug.LogError("Unbalanced for detected, help !");
-        }
-        
+        //update position
+        this.transform.position += m_v * Time.deltaTime;
     }
 
     private void AddForces()
@@ -41,5 +37,11 @@ public class PhysicsEngine : MonoBehaviour {
         {
             m_netForceVector += m_forceVectorList[i];
         }
+    }
+
+    private void UpdateVelocity()
+    {
+        Vector3 accelerationVector = m_netForceVector / m_mass;
+        m_v += accelerationVector * Time.deltaTime;
     }
 }
